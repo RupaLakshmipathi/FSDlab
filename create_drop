@@ -1,0 +1,21 @@
+// Create or switch database
+use college
+
+// Create collection
+db.createCollection("students")
+
+// Display collections
+show collections
+
+// Insert a document
+db.students.insertOne({
+    id: 1,
+    name: "Meghana",
+    course: "CSE"
+})
+
+// Drop collection
+db.students.drop()
+
+// Drop database
+db.dropDatabase()
