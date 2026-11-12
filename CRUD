@@ -1,0 +1,24 @@
+// Select database
+use college
+
+// Create collection
+db.createCollection("students")
+
+// CREATE - Insert document
+db.students.insert({
+    id: 1,
+    name: "Meghana",
+    course: "CSE"
+})
+
+// READ - Display documents
+db.students.find()
+
+// UPDATE - Update document
+db.students.update(
+    { id: 1 },
+    { $set: { course: "IT" } }
+)
+
+// DELETE - Remove document
+db.students.remove({ id: 1 })
