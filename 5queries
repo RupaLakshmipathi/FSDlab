@@ -1,0 +1,32 @@
+// Select database
+use college
+
+// Insert records
+db.students.insertMany([
+    { id: 1, name: "Meghana", marks: 90 },
+    { id: 2, name: "Ravi", marks: 80 },
+    { id: 3, name: "John", marks: 85 },
+    { id: 4, name: "David", marks: 70 }
+])
+
+// 1. Find all records
+db.students.find()
+
+// 2. Limit records
+db.students.find().limit(2)
+
+// 3. Sort records in ascending order
+db.students.find().sort({ marks: 1 })
+
+// 4. Create index
+db.students.createIndex({ name: 1 })
+
+// 5. Aggregate records
+db.students.aggregate([
+    {
+        $group: {
+            _id: null,
+            averageMarks: { $avg: "$marks" }
+        }
+    }
+])
